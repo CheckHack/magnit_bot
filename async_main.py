@@ -51,7 +51,7 @@ async def collect_data(city_code='2398'):
                 [card_title, card_discount, card_old_price, card_price, card_sale_date]
             )
         
-    async with aiofiles.open(f'{city}_{cur_time}.csv', 'w') as file:
+    async with aiofiles.open(f'{city}_{cur_time}.csv', 'w',  encoding='utf-8') as file:
         writer = AsyncWriter(file)
         
         await writer.writerow(
