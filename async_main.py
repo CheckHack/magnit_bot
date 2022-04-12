@@ -26,7 +26,7 @@ async def collect_data(city_code='2398'):
         soup = BeautifulSoup(await response.text(), 'lxml')
         
         city = soup.find('a', class_='header__contacts-link_city').text.strip()
-        cards = soup.find_all('a', class_='card-sale_catalogue')
+        cards = soup.find_all('a', class_='card-sale card-sale_catalogue')
         
         data = []
         for card in cards:
